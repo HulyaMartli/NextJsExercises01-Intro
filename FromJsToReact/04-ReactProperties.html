@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 - React Props</title>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+
+    <!-- React scripts taken from unpkg.com -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Babel script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Creating React Components
+     -->
+    <script type="text/jsx">
+        const app = document.getElementById("app");
+
+        function HomePage(){
+            return (
+                    <Header title="Next.js 👾" />
+            )
+        }
+
+        function Header({title}){
+
+            return (
+                <header>
+                    <div className="logo">
+                        <h1>{title ? title : 'Default Title'}</h1>
+                    </div>
+                    <h2>Develop. Preview. Ship. 🚀</h2>
+                    <nav>
+                        <ul>
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Contact</li>
+                        </ul>
+                    </nav>
+                </header>)
+        }
+
+        ReactDOM.render(<HomePage/>, app)
+    </script>
+</body>
+
+</html>

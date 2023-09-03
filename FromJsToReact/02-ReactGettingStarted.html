@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - JS Getting Started with React</title>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+
+    <!-- React scripts taken from unpkg.com -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Babel script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- ReactDOM.render() method instead of plain JavaScript DOM methods 
+        <h1></h1> -> JSX code
+     -->
+    <script type="text/jsx">
+        const app = document.getElementById("app");
+        ReactDOM.render(<h1>Develop. Preview. Ship. 🚀</h1>, app)
+    </script>
+</body>
+
+</html>

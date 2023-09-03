@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 - React Components</title>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+
+    <!-- React scripts taken from unpkg.com -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Babel script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Creating React Components
+     -->
+    <script type="text/jsx">
+        const app = document.getElementById("app");
+
+        function HomePage(){
+            return (
+                <>
+                    <Header />
+                    <hr />
+                    <Main />
+                    <hr />
+                    <Footer />
+                </>
+            )
+        }
+
+        function Header(){
+            return (
+                <header>
+                    <div className="logo">
+                        <h1>Next.js</h1>
+                    </div>
+                    <h2>Develop. Preview. Ship. 🚀</h2>
+                    <nav>
+                        <ul>
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Contact</li>
+                        </ul>
+                    </nav>
+                </header>)
+        }
+
+        function Main(){
+            return (
+                <main>
+                    <article>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod minus quaerat culpa non voluptatem animi, quos cum repellendus fuga, error accusantium, tempore iste asperiores quidem commodi rem doloremque vero officiis?Architecto cum est minus nobis perspiciatis fugiat odit id accusantium voluptatibus quod soluta consequuntur obcaecati asperiores velit ex dicta natus, suscipit vel delectus itaque dignissimos sit tempora! Error, quisquam sunt? Tenetur iure quae dolorum rerum, voluptatum harum! Mollitia aperiam culpa eum quaerat earum fugit, facilis amet similique id atque eius blanditiis voluptate aut veritatis neque adipisci praesentium explicabo ipsum nihil?
+                        </p>
+                    </article>
+                </main>
+                )
+        }
+
+        function Footer(){
+            return <footer><small>I am footer.</small></footer>
+        }
+        ReactDOM.render(<HomePage/>, app)
+    </script>
+</body>
+
+</html>

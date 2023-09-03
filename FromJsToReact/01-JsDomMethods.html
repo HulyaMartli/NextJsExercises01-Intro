@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - JS DOM Methods</title>
+</head>
+<body>
+    <div id="app">
+    </div>
+    
+    <script type="text/javascript">
+        const app = document.getElementById("app");
+        const header1 = document.createElement("h1");
+        const header1Content = document.createTextNode(
+            "Develop. Preview. Ship. 🚀"
+        )
+        header1.appendChild(header1Content);
+        app.appendChild(header1);
+    </script>
+</body>
+</html>

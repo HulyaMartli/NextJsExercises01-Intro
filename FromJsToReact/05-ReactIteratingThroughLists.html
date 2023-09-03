@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 - React Iterating Through Lists</title>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+
+    <!-- React scripts taken from unpkg.com -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Babel script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Creating React Components
+     -->
+    <script type="text/jsx">
+        const app = document.getElementById("app");
+
+        function HomePage(){
+            const scientists = [
+            {id:0, name:'Ada Lovelace'}, 
+            {id:1, name:'Grace Hopper'}, 
+            {id:2, name:'Margaret Hamilton'}];
+
+            return (
+                <>
+                    <Header title="Woman Computer Scientists 💪🏻" />
+                        <ul>
+                            {scientists.map(sc => <li key={sc.id}>{sc.name}</li>)}
+                        </ul>
+                </>
+            )
+        }
+
+        function Header({title}){
+
+            return (
+                <header>
+                    <div className="logo">
+                        <h1>{title ? title : 'Default Title'}</h1>
+                    </div>
+                </header>)
+        }
+        
+        ReactDOM.render(<HomePage/>, app)
+    </script>
+</body>
+
+</html>

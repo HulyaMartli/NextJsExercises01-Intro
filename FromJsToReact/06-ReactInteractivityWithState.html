@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/jsx">
+
+        const app = document.getElementById("app");
+        
+
+        function HomePage(){
+            const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
+            const [sciList, setSciList] = React.useState([]);
+            const [clickCount, setClickCount] = React.useState(0);
+
+            function handleClick(e){
+                setClickCount(clickCount + 1);
+                setSciList([...sciList, <li key={clickCount}>{names[clickCount]}</li>])
+            }
+
+            return (
+                <>
+                    <Header title="Woman Computer Scientists 💪🏻" />
+                        <ul>
+                            {sciList}
+                        </ul>
+                        <button onClick={handleClick}>Get scientist</button>
+                </>
+            )
+        }
+
+        function Header({title}){
+
+            return (
+                <header>
+                    <div className="logo">
+                        <h1>{title ? title : 'Default Title'}</h1>
+                    </div>
+                </header>)
+        }
+
+        ReactDOM.render(<HomePage/>, app)
+    </script>
+</body>
+
+</html>
